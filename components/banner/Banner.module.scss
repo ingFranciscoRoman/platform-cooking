@@ -1,0 +1,27 @@
+.banner {
+    background: url('/assets/bcq.png');
+    background-size: cover;
+    height: 416px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
+    opacity: 1;
+
+    div {
+        position: absolute;
+        left: 15.5rem;
+        top: 9rem;
+        display: flex;
+        flex-direction: column;
+        h2{
+            font-size: 74px;
+            margin: 0;
+            opacity: 1;
+        }
+        span {
+            font-size: 67px;
+        }
+    }
+}

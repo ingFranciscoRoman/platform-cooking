@@ -1,0 +1,14 @@
+.newRecipes {
+    color: #D84A4A;
+    .title {
+        border: 1px solid #D84A4A;
+        height: 83px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 50px;
+        h3 {
+            font-size: 67px;
+        }
+    }
+}

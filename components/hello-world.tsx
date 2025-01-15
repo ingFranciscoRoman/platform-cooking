@@ -2,7 +2,8 @@
 
 import { useQuery } from "@tanstack/react-query";
 import styles from "./hello-world.module.scss";
-import { Banner } from "./banner/banner";
+import { NewRecipes } from "./NewRecipes/NewRecipes";
+import { Banner } from "./Banner/Banner";
 
 export default function HelloWorld() {
   // const { status, data, error, isFetching } = useQuery({
@@ -16,6 +17,7 @@ export default function HelloWorld() {
   return (
     <div className={styles.hello}>
       <Banner />
+      <NewRecipes />
     </div>
   );
 }
