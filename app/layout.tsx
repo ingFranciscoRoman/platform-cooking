@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 
 import "@/styles/globals.scss";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { queryClient } from "@/lib/query-client";
 
 export const metadata: Metadata = {
-  title: "With Sass",
-  description: "Next.js example with Sass.",
+  title: "Cooking Platform",
+  description: "This proyect is a cooking platform",
 };
 
 export default function RootLayout({
@@ -14,7 +16,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <QueryClientProvider client={queryClient}>
+          {children}
+        </QueryClientProvider>
+      </body>
     </html>
   );
 }
