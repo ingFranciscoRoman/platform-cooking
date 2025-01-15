@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "@/styles/globals.scss";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "@/lib/query-client";
+import { Header } from "@/components/header/Header";
 
 export const metadata: Metadata = {
   title: "Cooking Platform",
@@ -17,6 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <Header />
         <QueryClientProvider client={queryClient}>
           {children}
         </QueryClientProvider>
