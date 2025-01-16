@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import "@/styles/globals.scss";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "@/lib/query-client";
-import { Header } from "@/components/Header/Header";
+import { Header } from "@/components/organisms/Header";
 
 export const metadata: Metadata = {
   title: "Cooking Platform",

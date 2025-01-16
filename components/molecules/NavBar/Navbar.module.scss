@@ -1,0 +1,17 @@
+.navList {
+    display: flex;
+    gap: 1.8rem;
+    li {
+        list-style: none;
+        a {
+            text-decoration: none;
+            color: #425966;
+            font-size: 13px;
+            font-weight: 500;
+            text-align: left;
+            &:hover {
+                color: #D84A4A;
+            }
+        }
+    }
+}

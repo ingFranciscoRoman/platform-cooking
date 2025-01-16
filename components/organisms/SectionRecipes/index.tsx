@@ -2,7 +2,7 @@ import React from "react";
 import style from "./NewRecipes.module.scss";
 import { monsterClubhouse } from "@/lib/fonts";
 
-export const NewRecipes = () => {
+export const SectionRecipes = () => {
   return (
     <section className={style.newRecipes}>
       <div className={style.title}>

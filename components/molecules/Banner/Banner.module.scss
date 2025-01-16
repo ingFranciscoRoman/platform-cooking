@@ -1,7 +1,9 @@
 .banner {
-    background: url('/assets/bcq.png');
+    background: url('/assets/banner.png');
     background-size: cover;
-    height: 416px;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,7 +12,6 @@
     opacity: 1;
 
     div {
-        border: 1px solid white;
         position: absolute;
         left: 16rem;
         top: 9rem;
@@ -22,7 +23,10 @@
             opacity: 1;
         }
         span {
+            position: absolute;
             font-size: 67px;
+            top: 60px;
+            left: 1px;
         }
     }
 }
