@@ -3,7 +3,7 @@
 // import { useQuery } from "@tanstack/react-query";
 import styles from "./hello-world.module.scss";
 import { SectionRecipes } from "../organisms/SectionRecipes";
-import { Banner } from "../molecules/Banner/Banner";
+import { Banner } from "../molecules/Banner";
 import { Footer } from "../organisms/Footer";
 
 export default function HelloWorld() {
