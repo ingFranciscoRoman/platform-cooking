@@ -1,5 +1,4 @@
 // import Image from "next/image";
-import { monsterClubhouse, poppins } from "@/lib/fonts";
 import style from "./Header.module.scss";
 import Navbar from "@/components/molecules/NavBar";
 
@@ -17,12 +16,10 @@ export const Header: React.FC = () => {
   return (
     <header className={style.header}>
       <div className={style.titleApp}>
-        <h1 className={`${monsterClubhouse.className}`}>Recipe</h1>
-        <span className={`${poppins.className}`}>App</span>
+        <h1 className="primari-m-title">Recipe</h1>
+        <span className="primiari-p-title">App</span>
       </div>
-      <nav>
-        <Navbar dataNav={dataNav} />
-      </nav>
+      <nav>{/* <Navbar dataNav={dataNav} /> */}</nav>
     </header>
   );
 };

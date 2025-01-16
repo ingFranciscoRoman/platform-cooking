@@ -10,7 +10,7 @@ const Heading: React.FC<HeadingProps> = ({ levels, children, style }) => {
   const Tag = levels || "h1";
   return (
     <Tag className={styles.heading} style={style}>
-      {children}
+      <h1 className="">{children}</h1>
     </Tag>
   );
 };
