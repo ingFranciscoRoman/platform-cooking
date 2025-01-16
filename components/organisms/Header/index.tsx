@@ -1,4 +1,3 @@
-// import Image from "next/image";
 import style from "./Header.module.scss";
 import Navbar from "@/components/molecules/NavBar";
 
@@ -19,7 +18,9 @@ export const Header: React.FC = () => {
         <h1 className="primari-m-title">Recipe</h1>
         <span className="primiari-p-title">App</span>
       </div>
-      <nav>{/* <Navbar dataNav={dataNav} /> */}</nav>
+      <nav>
+        <Navbar dataNav={dataNav} />
+      </nav>
     </header>
   );
 };

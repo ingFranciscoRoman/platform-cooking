@@ -1,20 +1,20 @@
 .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--white-color);
+  height: 69px;
+  padding: 0 50px;
+  .titleApp {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    background: #FFFFFF;
-    height: 69px;
-    padding: 0 50px;
-    .titleApp {
-        display: flex;
-        align-items: center;
-        h1 {
-            font-size: 40px;
-            color: #425966;
-        }
-        span {
-            font-size: 30px;
-            color: #D84A4A;
-        }
+    h1 {
+      font-size: 40px;
+      color: var(--blue-dark-color);
     }
+    span {
+      font-size: 30px;
+      color: var(--red-color);
+    }
+  }
 }

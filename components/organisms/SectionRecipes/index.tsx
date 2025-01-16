@@ -1,6 +1,5 @@
 import React from "react";
 import style from "./NewRecipes.module.scss";
-// import { monsterClubhouse } from "@/lib/fonts";
 
 export const SectionRecipes = () => {
   return (
