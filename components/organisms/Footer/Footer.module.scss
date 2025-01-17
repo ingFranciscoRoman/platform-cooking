@@ -5,4 +5,17 @@
   border: 1px solid black;
   height: 167px;
   padding: 0 50px;
+  position: relative;
+  background: var(--background-footer-color);
+  h1 {
+    color: var(--blue-dark-color);
+  }
+  img {
+    width: 536px;
+    height: 248px;
+    position: absolute;
+    right: 0;
+    top: -3.5rem;
+    bottom: 0;
+  }
 }
