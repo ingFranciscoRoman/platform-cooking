@@ -5,30 +5,31 @@
   width: 266px;
   margin-top: 2rem;
   margin-bottom: 9rem;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: end;
-}
+  justify-content: center;
 
-.contain-information {
-  background: var(--background-gradient-card-color);
-  height: 270px;
-  width: 266px;
-  border: 1px solid green;
-  border-radius: var(--border-radius);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  transition: height 0.3s ease;
+  .contain-information {
+    background: var(--background-gradient-card-color);
+    height: 270px;
+    width: 266px;
+    border: 1px solid green;
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    transition: height 0.3s ease;
 
-  img {
-    position: absolute;
-    top: -3.3rem;
-  }
+    img {
+      position: absolute;
+      top: -3.3rem;
+    }
 
-  &:hover {
-    height: 300px; // Nueva altura al hacer hover
+    &:hover {
+      height: 300px; // Nueva altura al hacer hover
+    }
   }
 }
 
