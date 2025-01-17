@@ -15,7 +15,7 @@ export const recipes = [
     readyInMinutes: 30,
     difficulty: getDifficulty(30),
     aggregateLikes: 2,
-    image: "https://img.spoonacular.com/recipes/638369-556x370.jpg",
+    image: "/img/ic_ojingeo_muchim.png", // https://img.spoonacular.com/recipes/638369-556x370.jpg
   },
   {
     title: "Royal Wedding Pear and Coriander Scones",
@@ -23,7 +23,7 @@ export const recipes = [
     readyInMinutes: 45,
     difficulty: getDifficulty(45),
     aggregateLikes: 3,
-    image: "https://img.spoonacular.com/recipes/658850-556x370.jpg",
+    image: "/img/ic_cola_chicken.png", // https://img.spoonacular.com/recipes/658850-556x370.jpg
   },
   {
     title: "White Chocolate Cranberry Ice Cream",
@@ -31,7 +31,7 @@ export const recipes = [
     readyInMinutes: 45,
     difficulty: getDifficulty(45),
     aggregateLikes: 16,
-    image: "https://img.spoonacular.com/recipes/665203-556x370.jpg",
+    image: "/img/ic_roasted_carrot.png", // https://img.spoonacular.com/recipes/665203-556x370.jpg
   },
   {
     title: "Crab Salad Stuffed Pita Pockets",
@@ -39,7 +39,7 @@ export const recipes = [
     readyInMinutes: 25,
     difficulty: getDifficulty(25),
     aggregateLikes: 8,
-    image: "https://img.spoonacular.com/recipes/640318-556x370.jpg",
+    image: "/img/ic_cherries.png", // https://img.spoonacular.com/recipes/640318-556x370.jpg
   },
 ];
 
