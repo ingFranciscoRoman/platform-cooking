@@ -1,11 +1,11 @@
 .card {
   background: var(--white-color);
-  border: 1px solid red;
+  // border: 1px solid red;
   height: 323px;
   width: 266px;
   margin-top: 2rem;
   margin-bottom: 9rem;
-  overflow: hidden;
+  // overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -26,17 +26,45 @@
       position: absolute;
       top: -3.3rem;
     }
-
-    &:hover {
-      height: 300px; // Nueva altura al hacer hover
-    }
   }
 }
 
 .information {
-  height: 100vh;
-  width: 100%;
+  margin-top: 5.3rem;
+}
+
+.container-information-recipie {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  flex-direction: column; /* Asegura que las tarjetas estén en columna */
+  align-items: center;
+  gap: 1rem; /* Espaciado entre los elementos */
+  padding: 1.5rem 0;
+
+  .info-item {
+    display: flex;
+    flex-direction: column; /* Organiza ícono y texto en columna */
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem; /* Espaciado entre ícono y texto */
+    text-align: center;
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .font-back-card-text {
+      font-family: "Poppins", sans-serif;
+      font-size: 0.9rem;
+      color: #d84a4a;
+      margin: 0;
+    }
+
+    .font-back-card-text-recipe {
+      font-family: "Roboto", sans-serif;
+      font-size: 0.8rem;
+      color: #425966;
+      margin: 0;
+    }
+  }
 }

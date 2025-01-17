@@ -39,3 +39,43 @@
   color: var(--color);
   font-weight: var(--font-weight);
 }
+
+.font-card-title {
+  font-family: "Poppins", serif;
+  --color: var(--red-color);
+  --font-weight: 400;
+  --font-size: 30px;
+  font-size: var(--font-size);
+  color: var(--color);
+  font-weight: var(--font-weight);
+}
+
+.font-card-title-recipe {
+  font-family: "Monster Clubhouse", serif;
+  --color: var(--red-color);
+  --font-weight: 400;
+  --font-size: 30px;
+  font-size: var(--font-size);
+  color: var(--color);
+  font-weight: var(--font-weight);
+}
+
+.font-back-card-text {
+  font-family: "Monster Clubhouse", serif;
+  --color: var(--red-color);
+  --font-weight: 400;
+  --font-size: 17px;
+  font-size: var(--font-size);
+  color: var(--color);
+  font-weight: var(--font-weight);
+}
+
+.font-back-card-text-recipe {
+  font-family: "Poppins", serif;
+  --color: var(--blue-dark-color);
+  --font-weight: 400;
+  --font-size: 15px;
+  font-size: var(--font-size);
+  color: var(--color);
+  font-weight: var(--font-weight);
+}
