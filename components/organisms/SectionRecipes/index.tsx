@@ -74,6 +74,7 @@ function SectionRecipes() {
       )),
     [recipes]
   );
+
   return (
     <>
       <div className={style.title}>
