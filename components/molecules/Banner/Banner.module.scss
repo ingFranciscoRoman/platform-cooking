@@ -41,8 +41,11 @@
     }
   }
 
-  @media (max-width: 767px) {
-    height: 30vh;
+  @media (max-width: 768px) {
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     div {
       top: 3rem;
       left: 8rem;
@@ -57,6 +60,9 @@
 
   @media (max-width: 428px) {
     height: 27vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     div {
       top: 3.8rem;
       left: 2.5rem;

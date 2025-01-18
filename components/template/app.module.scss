@@ -1,7 +1,5 @@
-$color: red;
-
 .hello {
-  color: $color;
+  color: var(--red-color);
   display: grid;
   min-height: 100dvh;
   grid-template-rows: auto 1fr auto;

@@ -10,7 +10,7 @@ function Navbar({ dataNav }: NavbarProps) {
     <ul className={style.navList}>
       {dataNav.map((item) => (
         <li key={item} className="primiari-p-title">
-          <NavItem href="#" label={item} />
+          {/* <NavItem href="#" label={item} /> */}
         </li>
       ))}
     </ul>

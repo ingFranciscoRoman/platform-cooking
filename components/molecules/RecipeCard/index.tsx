@@ -1,10 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import style from "@/components/molecules/RecipeCard/RecipeCard.module.scss";
 import { useSplitTitle } from "@/components/molecules/RecipeCard/hooks/useSplitTitle";
-import BackCard from "@/components/atoms/BackCard";
+import BackInformationCard from "@/components/atoms/BackInformationCard";
 
 interface RecipeCardProps {
   title: string;
@@ -29,7 +28,6 @@ function RecipeCard({
   iconPortion,
   iconTime,
 }: RecipeCardProps) {
-  const [hover, setHover] = useState(false);
   const { mainTitle, subTitle } = useSplitTitle(title);
 
   return (
@@ -43,14 +41,16 @@ function RecipeCard({
         </div>
       </div>
       <div className={style.hiddenCard}>
-        <Image src={image} alt={title} width={160} height={157} />
-        <div className={style.cardContent}>
-          <p>{title}</p>
-          <p>{servings} raciones</p>
-          <p>Tiempo de preparación: {readyInMinutes} minutos</p>
-          <p>Dificultad: {difficulty}</p>
-          <p>Likes: {aggregateLikes}</p>
-        </div>
+        <BackInformationCard
+          image={`${image}`}
+          title={`${title}`}
+          servings={servings}
+          readyInMinutes={readyInMinutes}
+          difficulty={difficulty}
+          iconPortion={iconPortion}
+          iconTime={iconTime}
+          iconDiff={iconDiff}
+        />
       </div>
     </section>
   );
