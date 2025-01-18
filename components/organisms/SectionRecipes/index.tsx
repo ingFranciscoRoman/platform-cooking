@@ -75,12 +75,14 @@ function SectionRecipes() {
     [recipes]
   );
   return (
-    <section className={style.newRecipes}>
+    <>
       <div className={style.title}>
         <h3 className="primari-m-title">Nuevas Recetas</h3>
       </div>
-      <div className={style["container-recipe"]}>{dataRecipes}</div>
-    </section>
+      <section className={style.newRecipes}>
+        <div className={style["container-recipe"]}>{dataRecipes}</div>
+      </section>
+    </>
   );
 }
 

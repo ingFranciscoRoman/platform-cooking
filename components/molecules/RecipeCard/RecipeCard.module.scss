@@ -1,7 +1,7 @@
 .cardContainer {
-  margin-bottom: 28rem;
   position: relative; // Contenedor relativo para manejar el posicionamiento
   width: 266px;
+  box-sizing: border-box;
 
   .card,
   .hiddenCard {
@@ -17,13 +17,13 @@
 
   .card {
     height: 270px;
-    background: #fff;
+    background: var(--white-color);
     z-index: 2; // Siempre por encima de la tarjeta oculta
   }
 
   .hiddenCard {
     height: 367px;
-    background: #fff;
+    background: var(--white-color);
     opacity: 0; // Ocultamos inicialmente
     z-index: 1; // Debajo de la tarjeta principal
     transform: translateY(10px); // Pequeño desplazamiento para animación
@@ -39,6 +39,52 @@
       opacity: 1; // Aparece la tarjeta oculta
       z-index: 2; // Por encima de la tarjeta principal
       transform: translateY(0); // Vuelve a su posición original
+    }
+  }
+
+  @media (max-width: 768px) {
+    position: relative; // Contenedor relativo para manejar el posicionamiento
+    width: 266px;
+    height: 20rem;
+    box-sizing: border-box;
+
+    .card,
+    .hiddenCard {
+      position: absolute; // Ambas tarjetas estarán en la misma posición
+      width: 266px;
+      left: 0;
+      top: 0;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+
+    .card {
+      height: 270px;
+      background: var(--white-color);
+      z-index: 2; // Siempre por encima de la tarjeta oculta
+    }
+
+    .hiddenCard {
+      height: 367px;
+      background: var(--white-color);
+      opacity: 0; // Ocultamos inicialmente
+      z-index: 1; // Debajo de la tarjeta principal
+      transform: translateY(10px); // Pequeño desplazamiento para animación
+    }
+
+    &:hover {
+      .card {
+        opacity: 0; // Desaparece la tarjeta principal
+        z-index: 1; // Queda debajo de la tarjeta oculta
+      }
+
+      .hiddenCard {
+        opacity: 1; // Aparece la tarjeta oculta
+        z-index: 2; // Por encima de la tarjeta principal
+        transform: translateY(0); // Vuelve a su posición original
+      }
     }
   }
 }
