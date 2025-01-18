@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
-import style from "./RecipeCard.module.scss";
 import { useState } from "react";
-import { useSplitTitle } from "@/hooks/useSplitTitle";
+import Image from "next/image";
+import style from "@/components/molecules/RecipeCard/RecipeCard.module.scss";
+import { useSplitTitle } from "@/components/molecules/RecipeCard/hooks/useSplitTitle";
 import BackCard from "@/components/atoms/BackCard";
 
 interface RecipeCardProps {
@@ -33,33 +33,26 @@ function RecipeCard({
   const { mainTitle, subTitle } = useSplitTitle(title);
 
   return (
-    <div
-      className={style.card}
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-    >
-      <div className={style["contain-information"]}>
+    <section className={style.cardContainer}>
+      <div className={style.card}>
         <Image src={image} alt={title} width={160} height={157} />
-        <span className={style["firstName"]}>primero</span>
-        <span className={style["secondName"]}>segundo</span>
-
-        {!hover ? (
-          <div className={style.information}>
-            <div>
-              <h1 className="font-card-title">{mainTitle}</h1>
-              <h1 className="font-card-title-recipe">{subTitle}</h1>
-            </div>
-            <div>5.0 like</div>
-          </div>
-        ) : (
-          <BackCard
-            iconDiff={`${iconDiff}`}
-            iconPortion={`${iconPortion}`}
-            iconTime={`${iconTime}`}
-          />
-        )}
+        <div className={style.cardContent}>
+          <p>{mainTitle}</p>
+          <p>{subTitle}</p>
+          <p>{servings} raciones</p>
+        </div>
       </div>
-    </div>
+      <div className={style.hiddenCard}>
+        <Image src={image} alt={title} width={160} height={157} />
+        <div className={style.cardContent}>
+          <p>{title}</p>
+          <p>{servings} raciones</p>
+          <p>Tiempo de preparación: {readyInMinutes} minutos</p>
+          <p>Dificultad: {difficulty}</p>
+          <p>Likes: {aggregateLikes}</p>
+        </div>
+      </div>
+    </section>
   );
 }
 

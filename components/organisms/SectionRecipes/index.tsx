@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import style from "@/components/organisms/SectionRecipes/NewRecipes.module.scss";
+import style from "@/components/organisms/SectionRecipes/SectionRecipes.module.scss";
 import RecipeCard from "@/components/molecules/RecipeCard";
 
 const getDifficulty = (readyInMinutes: number) => {
@@ -56,7 +56,7 @@ export const recipes = [
 ];
 
 function SectionRecipes() {
-  const render = useMemo(
+  const dataRecipes = useMemo(
     () =>
       recipes.map((recipe) => (
         <RecipeCard
@@ -79,7 +79,7 @@ function SectionRecipes() {
       <div className={style.title}>
         <h3 className="primari-m-title">Nuevas Recetas</h3>
       </div>
-      <div className={style["container-recipe"]}>{render}</div>
+      <div className={style["container-recipe"]}>{dataRecipes}</div>
     </section>
   );
 }

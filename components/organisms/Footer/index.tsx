@@ -1,5 +1,6 @@
-import style from "./Footer.module.scss";
+import { memo } from "react";
 import Image from "next/image";
+import style from "@/components/organisms/Footer/Footer.module.scss";
 
 function Footer() {
   return (
@@ -10,4 +11,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default memo(Footer);

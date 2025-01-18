@@ -1,3 +1,4 @@
+import { memo } from "react";
 import style from "./Header.module.scss";
 import Navbar from "@/components/molecules/NavBar";
 
@@ -25,4 +26,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default memo(Header);
