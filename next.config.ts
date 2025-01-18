@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "img.spoonacular.com",
         port: "",
-        pathname: "/**", // Permite todas las rutas
+        pathname: "/**",
       },
     ],
   },

@@ -1,9 +1,9 @@
-import HelloWorld from "@/components/template/hello-world";
+import App from "@/components/template";
 
 export default function Home() {
   return (
     <div className="app">
-      <HelloWorld />
+      <App />
     </div>
   );
 }

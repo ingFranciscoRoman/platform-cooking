@@ -11,16 +11,28 @@
   justify-content: center;
 
   .contain-information {
-    background: var(--background-gradient-card-color);
+    background: var(--gradient-card-color);
     height: 270px;
     width: 266px;
     border: 1px solid green;
     border-radius: var(--border-radius);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     position: relative;
-    transition: height 0.3s ease;
+    box-shadow: 4px 6px 10px #bfc4cad1;
+    .secondName {
+      opacity: 0;
+    }
+    &:hover {
+      height: 400px;
+      .firstName {
+        opacity: 0;
+      }
+      .secondName {
+        opacity: 1;
+      }
+    }
 
     img {
       position: absolute;
@@ -31,40 +43,4 @@
 
 .information {
   margin-top: 5.3rem;
-}
-
-.container-information-recipie {
-  display: flex;
-  flex-direction: column; /* Asegura que las tarjetas estén en columna */
-  align-items: center;
-  gap: 1rem; /* Espaciado entre los elementos */
-  padding: 1.5rem 0;
-
-  .info-item {
-    display: flex;
-    flex-direction: column; /* Organiza ícono y texto en columna */
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem; /* Espaciado entre ícono y texto */
-    text-align: center;
-
-    img {
-      width: 24px;
-      height: 24px;
-    }
-
-    .font-back-card-text {
-      font-family: "Poppins", sans-serif;
-      font-size: 0.9rem;
-      color: #d84a4a;
-      margin: 0;
-    }
-
-    .font-back-card-text-recipe {
-      font-family: "Roboto", sans-serif;
-      font-size: 0.8rem;
-      color: #425966;
-      margin: 0;
-    }
-  }
 }

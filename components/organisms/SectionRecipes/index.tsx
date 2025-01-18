@@ -1,6 +1,6 @@
-import React from "react";
-import style from "./NewRecipes.module.scss";
-import { RecipeCard } from "@/components/molecules/RecipeCard";
+import React, { useMemo } from "react";
+import style from "@/components/organisms/SectionRecipes/NewRecipes.module.scss";
+import RecipeCard from "@/components/molecules/RecipeCard";
 
 const getDifficulty = (readyInMinutes: number) => {
   if (readyInMinutes < 20) return "fácil";
@@ -55,28 +55,33 @@ export const recipes = [
   },
 ];
 
-export const SectionRecipes = () => {
+function SectionRecipes() {
+  const render = useMemo(
+    () =>
+      recipes.map((recipe) => (
+        <RecipeCard
+          key={recipe.title}
+          title={recipe.title}
+          servings={recipe.servings}
+          readyInMinutes={recipe.readyInMinutes}
+          difficulty={recipe.difficulty}
+          aggregateLikes={recipe.aggregateLikes}
+          image={recipe.image}
+          iconDiff={recipe.iconDiff}
+          iconPortion={recipe.iconPortion}
+          iconTime={recipe.iconTime}
+        />
+      )),
+    [recipes]
+  );
   return (
     <section className={style.newRecipes}>
       <div className={style.title}>
         <h3 className="primari-m-title">Nuevas Recetas</h3>
       </div>
-      <div className={style["container-recipe"]}>
-        {recipes.map((recipe) => (
-          <RecipeCard
-            key={recipe.title}
-            title={recipe.title}
-            servings={recipe.servings}
-            readyInMinutes={recipe.readyInMinutes}
-            difficulty={recipe.difficulty}
-            aggregateLikes={recipe.aggregateLikes}
-            image={recipe.image}
-            iconDiff={recipe.iconDiff}
-            iconPortion={recipe.iconPortion}
-            iconTime={recipe.iconTime}
-          />
-        ))}
-      </div>
+      <div className={style["container-recipe"]}>{render}</div>
     </section>
   );
-};
+}
+
+export default SectionRecipes;

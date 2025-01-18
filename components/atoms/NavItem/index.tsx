@@ -1,13 +1,12 @@
 import Link from "next/link";
-import style from "./NavItem.module.scss";
 
 interface NavItemProps {
   label: string;
   href: string;
 }
 
-const NavItem: React.FC<NavItemProps> = ({ label, href }) => {
+function NavItem({ label, href }: NavItemProps) {
   return <Link href={href}>{label}</Link>;
-};
+}
 
 export default NavItem;

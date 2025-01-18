@@ -1,7 +1,8 @@
 // import { monsterClubhouse, poppins } from "@/lib/fonts";
+import { memo } from "react";
 import style from "./Banner.module.scss";
 
-export const Banner = () => {
+function Banner() {
   return (
     <section className={style.banner}>
       <div>
@@ -10,4 +11,6 @@ export const Banner = () => {
       </div>
     </section>
   );
-};
+}
+
+export default memo(Banner);

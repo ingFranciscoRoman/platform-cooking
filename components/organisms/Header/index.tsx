@@ -11,7 +11,7 @@ const dataNav = [
   "Sopas",
 ];
 
-export const Header: React.FC = () => {
+function Header() {
   return (
     <header className={style.header}>
       <div className={style.titleApp}>
@@ -23,4 +23,6 @@ export const Header: React.FC = () => {
       </nav>
     </header>
   );
-};
+}
+
+export default Header;

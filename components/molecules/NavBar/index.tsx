@@ -5,7 +5,7 @@ interface NavbarProps {
   dataNav: string[];
 }
 
-const Navbar: React.FC<NavbarProps> = ({ dataNav }) => {
+function Navbar({ dataNav }: NavbarProps) {
   return (
     <ul className={style.navList}>
       {dataNav.map((item) => (
@@ -15,6 +15,6 @@ const Navbar: React.FC<NavbarProps> = ({ dataNav }) => {
       ))}
     </ul>
   );
-};
+}
 
 export default Navbar;

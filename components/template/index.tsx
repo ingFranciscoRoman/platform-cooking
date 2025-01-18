@@ -1,12 +1,12 @@
 "use client";
 
 // import { useQuery } from "@tanstack/react-query";
-import styles from "./hello-world.module.scss";
-import { SectionRecipes } from "../organisms/SectionRecipes";
-import { Banner } from "../molecules/Banner";
-import { Footer } from "../organisms/Footer";
+import styles from "@/components/template/app.module.scss";
+import SectionRecipes from "@/components/organisms/SectionRecipes";
+import Banner from "@/components/molecules/Banner";
+import Footer from "@/components/organisms/Footer";
 
-export default function HelloWorld() {
+function App() {
   // const { status, data, error, isFetching } = useQuery({
   //   queryKey: ["/recipes/random"],
   // });
@@ -23,3 +23,5 @@ export default function HelloWorld() {
     </div>
   );
 }
+
+export default App;
