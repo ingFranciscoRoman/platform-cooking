@@ -56,6 +56,16 @@ export const recipes = [
 ];
 
 function SectionRecipes() {
+  // const { status, data, error, isFetching } = useQuery({
+  //   queryKey: ["/recipes/random?number=4"],
+  // });
+
+  // if (isFetching) {
+  //   return <div>Loading...</div>;
+  // }
+
+  // console.log({ data });
+
   const dataRecipes = useMemo(
     () =>
       recipes.map((recipe) => (
