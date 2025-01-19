@@ -11,19 +11,15 @@
   }
 
   .content-title {
-    margin-top: 6.5rem;
-    text-align: center;
+    margin-top: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
     p {
       margin: 0;
       font-size: 30px;
     }
-  }
-
-  .cardContent {
-    display: flex;
-    flex-direction: column; // Asegura que los hijos se coloquen en una columna (título, íconos, etc.)
-    justify-content: space-between; // Distribuye el contenido entre la parte superior e inferior
-    height: 100%; // Llena todo el espacio disponible
   }
 
   .card,
@@ -33,7 +29,7 @@
     left: 0;
     top: 0;
     border-radius: 10px;
-    // overflow: hidden;
+    overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
   }
