@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 import style from "@/components/organisms/SectionRecipes/SectionRecipes.module.scss";
 import RecipeCard from "@/components/molecules/RecipeCard";
+import { useRecipes } from "@/context/RecipeContext";
 
 const getDifficulty = (readyInMinutes: number) => {
   if (readyInMinutes < 20) return "fácil";
@@ -10,6 +11,7 @@ const getDifficulty = (readyInMinutes: number) => {
 
 export const recipes = [
   {
+    id: 1,
     title: "Korean Sweet n Sour Chicken",
     servings: 4,
     readyInMinutes: 30,
@@ -21,6 +23,7 @@ export const recipes = [
     iconTime: "/img/timepre.svg",
   },
   {
+    id: 2,
     title: "Royal Wedding Pear and Coriander Scones",
     servings: 8,
     readyInMinutes: 45,
@@ -32,6 +35,7 @@ export const recipes = [
     iconTime: "/img/timepre.svg",
   },
   {
+    id: 3,
     title: "White Chocolate Cranberry Ice Cream",
     servings: 6,
     readyInMinutes: 45,
@@ -43,6 +47,7 @@ export const recipes = [
     iconTime: "/img/timepre.svg",
   },
   {
+    id: 4,
     title: "Crab Salad Stuffed Pita Pockets",
     servings: 2,
     readyInMinutes: 25,
@@ -56,34 +61,25 @@ export const recipes = [
 ];
 
 function SectionRecipes() {
-  // const { status, data, error, isFetching } = useQuery({
-  //   queryKey: ["/recipes/random?number=4"],
-  // });
-
-  // if (isFetching) {
-  //   return <div>Loading...</div>;
-  // }
-
-  // console.log({ data });
+  // const { data: recipes, isFetching } = useRecipes();
 
   const dataRecipes = useMemo(
     () =>
-      recipes.map((recipe) => (
+      recipes?.map((recipe) => (
         <RecipeCard
-          key={recipe.title}
+          key={recipe.id}
           title={recipe.title}
           servings={recipe.servings}
           readyInMinutes={recipe.readyInMinutes}
-          difficulty={recipe.difficulty}
+          difficulty={getDifficulty(recipe.readyInMinutes)}
           aggregateLikes={recipe.aggregateLikes}
           image={recipe.image}
-          iconDiff={recipe.iconDiff}
-          iconPortion={recipe.iconPortion}
-          iconTime={recipe.iconTime}
         />
       )),
     [recipes]
   );
+
+  // if (isFetching) return <div>Cargando recetas...</div>;
 
   return (
     <>

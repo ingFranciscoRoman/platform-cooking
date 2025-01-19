@@ -1,9 +1,24 @@
+"use client";
+
 import { useQuery } from "@tanstack/react-query";
-import { createContext, useContext } from "react";
+import { createContext, useContext, useMemo } from "react";
+
+type Recipe = {
+  id: number;
+  title: string;
+  servings: number;
+  readyInMinutes: number;
+  aggregateLikes: number;
+  image: string;
+};
+
+type RecipesResponse = {
+  recipes: Recipe[];
+};
 
 type RecipeContextType = {
-  data: any[];
-  isLoading: boolean;
+  data: Recipe[] | undefined;
+  isFetching: boolean;
   error: unknown;
 };
 
@@ -14,16 +29,26 @@ export function RecipeProvider({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const {
-    data = [],
-    isLoading,
-    error,
-  } = useQuery<any[]>({
-    queryKey: ["/recipes/random"],
+  const { data, error, isFetching } = useQuery<RecipesResponse>({
+    queryKey: ["/recipes/random?number=4"],
   });
 
+  const recipes = useMemo(() => {
+    return (
+      data?.recipes?.map((recipe) => ({
+        id: recipe.id,
+        title: recipe.title,
+        servings: recipe.servings,
+        readyInMinutes: recipe.readyInMinutes,
+        aggregateLikes: recipe.aggregateLikes,
+        image: recipe.image,
+      })) || []
+    );
+  }, [data]);
+
+  // Proveer los datos procesados a través del contexto
   return (
-    <RecipeContext.Provider value={{ data, isLoading, error }}>
+    <RecipeContext.Provider value={{ data: recipes, isFetching, error }}>
       {children}
     </RecipeContext.Provider>
   );
@@ -36,4 +61,5 @@ export function useRecipes() {
       "useRecipes debe ser usado dentro de RecipeContextProvider"
     );
   }
+  return context;
 }
