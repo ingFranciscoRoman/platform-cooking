@@ -17,4 +17,24 @@
       color: var(--red-color);
     }
   }
+
+  @media (max-width: 1280px) {
+    .container-navbar {
+      display: block;
+    }
+    .container-icon-home {
+      display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .container-navbar {
+      display: none;
+    }
+    .container-icon-home {
+      display: block;
+    }
+  }
+  // .@media (max-width: 428px) {
+  // }
 }
