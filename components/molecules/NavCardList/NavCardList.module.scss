@@ -1,12 +1,5 @@
 .container-nav-card-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(106px, 1fr));
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 16px;
-  margin-top: -2.5rem;
-  z-index: 5;
-
+  display: none;
   .nav-card {
     background: var(--gradient-card-color);
     border-radius: 10px;
@@ -25,6 +18,35 @@
     p {
       margin: 0;
       font-size: 13px;
+    }
+  }
+
+  @media (max-width: 1280px) {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(106px, 1fr));
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 16px;
+    margin-top: -2.5rem;
+    z-index: 5;
+  }
+
+  @media (max-width: 428px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 25rem;
+    margin: auto;
+    margin-top: -2.5rem;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    .nav-card {
+      width: 114px;
+      height: 92px;
     }
   }
 }
