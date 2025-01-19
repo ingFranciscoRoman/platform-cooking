@@ -46,7 +46,6 @@ export function RecipeProvider({
     );
   }, [data]);
 
-  // Proveer los datos procesados a través del contexto
   return (
     <RecipeContext.Provider value={{ data: recipes, isFetching, error }}>
       {children}

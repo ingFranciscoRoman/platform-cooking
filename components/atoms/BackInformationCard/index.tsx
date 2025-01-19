@@ -24,7 +24,6 @@ function BackInformationCard({
 }: BackInformationCardProps) {
   return (
     <>
-      <Image src={image} alt={title} width={160} height={157} />
       <div className={style.cardContent}>
         <p>{title}</p>
         <p>{servings} raciones</p>

@@ -11,6 +11,10 @@
       font-size: 54px;
     }
   }
+
+  @media (max-width: 1280px) {
+    margin-top: 1rem;
+  }
 }
 
 .newRecipes {
@@ -20,9 +24,17 @@
 
   .container-recipe {
     // width: 80rem;
-    border: 1px solid green;
     display: flex;
     gap: 1.5rem;
+    margin-top: 2.5rem;
+    height: 27rem;
+  }
+
+  @media (max-width: 1280px) {
+    .container-recipe {
+      margin-top: 2.5rem;
+      height: 27rem;
+    }
   }
 
   @media (max-width: 768px) {

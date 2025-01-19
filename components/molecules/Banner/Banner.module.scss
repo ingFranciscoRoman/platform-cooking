@@ -29,9 +29,13 @@
   }
 
   @media (max-width: 1280px) {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 416px;
     div {
-      top: 25%;
-      left: 8%;
+      top: 8rem;
+      left: 15rem;
       h2 {
         font-size: var(--font-size);
       }

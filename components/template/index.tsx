@@ -1,6 +1,5 @@
 "use client";
 
-import { useQuery } from "@tanstack/react-query";
 import styles from "@/components/template/app.module.scss";
 import SectionRecipes from "@/components/organisms/SectionRecipes";
 import Banner from "@/components/molecules/Banner";

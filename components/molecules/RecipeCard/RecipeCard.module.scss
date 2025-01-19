@@ -3,6 +3,29 @@
   width: 266px;
   box-sizing: border-box;
 
+  .container-img,
+  img {
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+  }
+
+  .content-title {
+    margin-top: 6.5rem;
+    text-align: center;
+    p {
+      margin: 0;
+      font-size: 30px;
+    }
+  }
+
+  .cardContent {
+    display: flex;
+    flex-direction: column; // Asegura que los hijos se coloquen en una columna (título, íconos, etc.)
+    justify-content: space-between; // Distribuye el contenido entre la parte superior e inferior
+    height: 100%; // Llena todo el espacio disponible
+  }
+
   .card,
   .hiddenCard {
     position: absolute; // Ambas tarjetas estarán en la misma posición
@@ -10,19 +33,19 @@
     left: 0;
     top: 0;
     border-radius: 10px;
-    overflow: hidden;
+    // overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
   }
 
   .card {
-    height: 270px;
+    height: 17rem;
     background: var(--white-color);
     z-index: 2; // Siempre por encima de la tarjeta oculta
   }
 
   .hiddenCard {
-    height: 367px;
+    height: 24rem;
     background: var(--white-color);
     opacity: 0; // Ocultamos inicialmente
     z-index: 1; // Debajo de la tarjeta principal
@@ -39,6 +62,68 @@
       opacity: 1; // Aparece la tarjeta oculta
       z-index: 2; // Por encima de la tarjeta principal
       transform: translateY(0); // Vuelve a su posición original
+    }
+  }
+
+  @media (max-width: 1280px) {
+    position: relative; // Contenedor relativo para manejar el posicionamiento
+    width: 266px;
+    height: 20rem;
+    box-sizing: border-box;
+
+    .card,
+    img {
+      position: absolute;
+      top: -3rem;
+    }
+
+    .hiddenCard,
+    img {
+      position: absolute;
+      top: -3rem;
+    }
+
+    .card,
+    .hiddenCard {
+      position: absolute; // Ambas tarjetas estarán en la misma posición
+      width: 266px;
+      left: 0;
+      top: 0;
+      border-radius: 10px;
+      // overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+    }
+
+    .card {
+      height: 17rem;
+      background: var(--gradient-card-color);
+      z-index: 2; // Siempre por encima de la tarjeta oculta
+      display: flex;
+      justify-content: center;
+    }
+
+    .hiddenCard {
+      height: 24rem;
+      background: var(--gradient-card-color);
+      opacity: 0; // Ocultamos inicialmente
+      z-index: 1; // Debajo de la tarjeta principal
+      //transform: translateY(10px); // Pequeño desplazamiento para animación
+      display: flex;
+      justify-content: center;
+    }
+
+    &:hover {
+      .card {
+        opacity: 0; // Desaparece la tarjeta principal
+        z-index: 1; // Queda debajo de la tarjeta oculta
+      }
+
+      .hiddenCard {
+        opacity: 1; // Aparece la tarjeta oculta
+        z-index: 2; // Por encima de la tarjeta principal
+        transform: translateY(0); // Vuelve a su posición original
+      }
     }
   }
 

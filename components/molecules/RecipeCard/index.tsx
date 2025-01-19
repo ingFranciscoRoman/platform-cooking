@@ -28,18 +28,41 @@ function RecipeCard({
   iconPortion,
   iconTime,
 }: RecipeCardProps) {
-  const { mainTitle, subTitle } = useSplitTitle(title);
+  const { firstTitle, secondTitle } = useSplitTitle(title);
 
   return (
     <section className={style.cardContainer}>
-      <div className={style.card}>
+      <div className={style["container-img"]}>
         <Image src={image} alt={title} width={160} height={157} />
+      </div>
+      <div className={style.card}>
         <div className={style.cardContent}>
-          <p>{mainTitle}</p>
-          <p>{subTitle}</p>
-          <p>{servings} raciones</p>
+          <div className={style["content-title"]}>
+            <p className="font-card-title">{firstTitle}</p>
+            <p className="font-card-title-recipe">{secondTitle}</p>
+          </div>
+          <div className={style["content-icons"]}>
+            <div className={style["content-icons-start"]}>
+              <Image
+                src="/img/ic_star.svg"
+                alt="icon-portion"
+                width={20}
+                height={20}
+              />
+              <p className="font-card-title">{aggregateLikes}</p>
+            </div>
+            <div className={style["content-icons-heart"]}>
+              <Image
+                src="/img/ic_heart.svg"
+                alt="icon-portion"
+                width={20}
+                height={20}
+              />
+            </div>
+          </div>
         </div>
       </div>
+      {/* <Image src={image} alt={title} width={160} height={157} /> */}
       <div className={style.hiddenCard}>
         <BackInformationCard
           image={`${image}`}
