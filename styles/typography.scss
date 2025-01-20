@@ -79,3 +79,13 @@
   color: var(--color);
   font-weight: var(--font-weight);
 }
+
+.nav-item-font {
+  font-family: "Poppins", serif;
+  --color: var(--blue-dark-color);
+  --font-weight: 400;
+  --font-size: 13px;
+  font-size: var(--font-size);
+  color: var(--color);
+  font-weight: var(--font-weight);
+}
