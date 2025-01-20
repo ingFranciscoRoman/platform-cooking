@@ -1,170 +1,120 @@
 .cardContainer {
-  position: relative; // Contenedor relativo para manejar el posicionamiento
   width: 266px;
-  box-sizing: border-box;
-
-  .container-img,
-  img {
-    z-index: 3;
+  margin-top: -12rem;
+  .container-img {
+    border-radius: 50%;
     display: flex;
     justify-content: center;
-  }
-
-  .content-title {
-    margin-top: 7rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-    p {
-      margin: 0;
-      font-size: 30px;
+    img {
+      width: 160px;
     }
   }
 
-  .card,
-  .hiddenCard {
-    position: absolute; // Ambas tarjetas estarán en la misma posición
-    width: 266px;
-    left: 0;
-    top: 0;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+  .card-front {
+    background: var(--gradient-card-color);
+    height: 270px;
+    margin-top: -6rem;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    box-shadow: 4px 6px 10px #bfc4cad1;
+
+    .content-title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 6rem;
+      p {
+        margin: 0;
+      }
+    }
+
+    .content-information-recipe {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 15px;
+      margin-top: 2rem;
+      .information-data-recipe {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        height: 2rem;
+        p {
+          font-family: poppins;
+          color: var(--blue-dark-color);
+        }
+      }
+      div,
+      img {
+        width: 23px;
+        height: 23px;
+      }
+    }
   }
 
-  .card {
-    height: 17rem;
-    background: var(--white-color);
-    z-index: 2; // Siempre por encima de la tarjeta oculta
-  }
-
-  .hiddenCard {
-    height: 24rem;
-    background: var(--white-color);
-    opacity: 0; // Ocultamos inicialmente
-    z-index: 1; // Debajo de la tarjeta principal
-    transform: translateY(10px); // Pequeño desplazamiento para animación
+  .hidden-card {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
   }
 
   &:hover {
-    .card {
-      opacity: 0; // Desaparece la tarjeta principal
-      z-index: 1; // Queda debajo de la tarjeta oculta
+    .card-front {
+      display: none;
     }
 
-    .hiddenCard {
-      opacity: 1; // Aparece la tarjeta oculta
-      z-index: 2; // Por encima de la tarjeta principal
-      transform: translateY(0); // Vuelve a su posición original
-    }
-  }
-
-  @media (max-width: 1280px) {
-    position: relative; // Contenedor relativo para manejar el posicionamiento
-    width: 266px;
-    height: 20rem;
-    box-sizing: border-box;
-
-    .card,
-    img {
-      position: absolute;
-      top: -3rem;
+    .container-img {
+      margin-top: -10.3rem;
+      img {
+        z-index: 5;
+      }
     }
 
-    .hiddenCard,
-    img {
-      position: absolute;
-      top: -3rem;
-    }
-
-    .card,
-    .hiddenCard {
-      position: absolute; // Ambas tarjetas estarán en la misma posición
-      width: 266px;
-      left: 0;
-      top: 0;
-      border-radius: 10px;
-      // overflow: hidden;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
-    }
-
-    .card {
-      height: 17rem;
-      background: var(--gradient-card-color);
-      z-index: 2; // Siempre por encima de la tarjeta oculta
+    .hidden-card {
       display: flex;
-      justify-content: center;
-    }
-
-    .hiddenCard {
-      height: 24rem;
-      background: var(--gradient-card-color);
-      opacity: 0; // Ocultamos inicialmente
-      z-index: 1; // Debajo de la tarjeta principal
-      //transform: translateY(10px); // Pequeño desplazamiento para animación
-      display: flex;
-      justify-content: center;
-    }
-
-    &:hover {
-      .card {
-        opacity: 0; // Desaparece la tarjeta principal
-        z-index: 1; // Queda debajo de la tarjeta oculta
-      }
-
-      .hiddenCard {
-        opacity: 1; // Aparece la tarjeta oculta
-        z-index: 2; // Por encima de la tarjeta principal
-        transform: translateY(0); // Vuelve a su posición original
-      }
-    }
-  }
-
-  @media (max-width: 768px) {
-    position: relative; // Contenedor relativo para manejar el posicionamiento
-    width: 266px;
-    height: 20rem;
-    box-sizing: border-box;
-
-    .card,
-    .hiddenCard {
-      position: absolute; // Ambas tarjetas estarán en la misma posición
       width: 266px;
-      left: 0;
-      top: 0;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-    }
+      height: 386px;
+      position: absolute;
+      top: 3.5rem;
+      border-radius: 16px;
+      background: var(--gradient-card-color);
+      box-shadow: 4px 6px 10px #bfc4cad1;
+      opacity: 1;
+      transform: translateY(0);
 
-    .card {
-      height: 270px;
-      background: var(--white-color);
-      z-index: 2; // Siempre por encima de la tarjeta oculta
-    }
-
-    .hiddenCard {
-      height: 367px;
-      background: var(--white-color);
-      opacity: 0; // Ocultamos inicialmente
-      z-index: 1; // Debajo de la tarjeta principal
-      transform: translateY(10px); // Pequeño desplazamiento para animación
-    }
-
-    &:hover {
-      .card {
-        opacity: 0; // Desaparece la tarjeta principal
-        z-index: 1; // Queda debajo de la tarjeta oculta
-      }
-
-      .hiddenCard {
-        opacity: 1; // Aparece la tarjeta oculta
-        z-index: 2; // Por encima de la tarjeta principal
-        transform: translateY(0); // Vuelve a su posición original
+      .card-back {
+        width: 266px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 3rem;
+        content-porcion,
+        img {
+          width: 17px;
+          height: 17px;
+        }
+        div {
+          width: 266px;
+          text-align: center;
+          p {
+            margin: 0;
+          }
+          .title-item {
+            font-family: "Monster Clubhouse";
+            font-size: 17px;
+            color: var(--red-color);
+          }
+          .sub-title-item {
+            font-family: "Poppins";
+            font-size: 15px;
+            color: var(--blue-dark-color);
+          }
+        }
       }
     }
   }
