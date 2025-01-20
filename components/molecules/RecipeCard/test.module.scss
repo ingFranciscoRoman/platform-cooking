@@ -81,6 +81,37 @@
       border-radius: 16px;
       background: var(--gradient-card-color);
       box-shadow: 4px 6px 10px #bfc4cad1;
+      .card-back {
+        width: 266px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 3rem;
+        content-porcion,
+        img {
+          width: 17px;
+          height: 17px;
+        }
+        div {
+          width: 266px;
+          text-align: center;
+          p {
+            margin: 0;
+          }
+          .title-item {
+            font-family: "Monster Clubhouse";
+            font-size: 17px;
+            color: var(--red-color);
+          }
+          .sub-title-item {
+            font-family: "Poppins";
+            font-size: 15px;
+            color: var(--blue-dark-color);
+          }
+        }
+      }
     }
   }
 }

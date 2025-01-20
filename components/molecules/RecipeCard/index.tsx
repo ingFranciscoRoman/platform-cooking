@@ -66,7 +66,44 @@ function RecipeCard({
       </div>
       {/** Cara tracera de la card */}
       <div className={style["hidden-card"]}>
-        <p>title - hidden card</p>
+        <div className={style["card-back"]}>
+          <div className={style["content-porcion"]}>
+            <Image
+              src="/img/porcion.svg"
+              width={17}
+              height={17}
+              alt="porcion"
+            />
+            <div>
+              <p className={style["title-item"]}>Tamaño de la porción</p>
+              <p className={style["sub-title-item"]}># raciones</p>
+            </div>
+          </div>
+          <div className={style["content-time-preparation"]}>
+            <Image
+              src="/img/timepre.svg"
+              width={17}
+              height={17}
+              alt="tiempo de preparación"
+            />
+            <div>
+              <p className={style["title-item"]}>Tiempo de preparación</p>
+              <p className={style["sub-title-item"]}># minutos</p>
+            </div>
+          </div>
+          <div className={style["content-difficulty"]}>
+            <Image
+              src="/img/diff.svg"
+              width={17}
+              height={17}
+              alt="dificultad del plato"
+            />
+            <div>
+              <p className={style["title-item"]}>Dificultad</p>
+              <p className={style["sub-title-item"]}>fácil</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     // <section className={style.cardContainer}>
