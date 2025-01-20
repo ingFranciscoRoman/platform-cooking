@@ -7,7 +7,6 @@
     justify-content: center;
     img {
       width: 160px;
-      transition: all 0.3s ease;
     }
   }
 
@@ -125,6 +124,56 @@
     .card-front {
       width: 266px;
       height: 270px;
+    }
+  }
+
+  @media (max-width: 428px) {
+    .container-img {
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      img {
+        width: 111px;
+        height: 107px;
+        border-radius: 50%;
+      }
+    }
+
+    .card-front {
+      width: 180px;
+      height: 182px;
+      margin-top: -4rem;
+
+      .content-title {
+        p {
+          margin: 0;
+          font-size: 20px;
+        }
+      }
+
+      .content-information-recipe {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 15px;
+        margin-top: 0.6rem;
+        .information-data-recipe {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          height: 2rem;
+          p {
+            font-family: poppins;
+            color: var(--blue-dark-color);
+            font-size: 17px;
+          }
+        }
+        div,
+        img {
+          width: 16px;
+          height: 16px;
+        }
+      }
     }
   }
 }
