@@ -66,7 +66,7 @@ function RecipeCard({
             />
             <div>
               <p className={style["title-item"]}>Tamaño de la porción</p>
-              <p className={style["sub-title-item"]}># raciones</p>
+              <p className={style["sub-title-item"]}>{servings} raciones</p>
             </div>
           </div>
           <div className={style["content-time-preparation"]}>
@@ -78,7 +78,9 @@ function RecipeCard({
             />
             <div>
               <p className={style["title-item"]}>Tiempo de preparación</p>
-              <p className={style["sub-title-item"]}># minutos</p>
+              <p className={style["sub-title-item"]}>
+                {readyInMinutes} minutos
+              </p>
             </div>
           </div>
           <div className={style["content-difficulty"]}>
@@ -90,7 +92,7 @@ function RecipeCard({
             />
             <div>
               <p className={style["title-item"]}>Dificultad</p>
-              <p className={style["sub-title-item"]}>fácil</p>
+              <p className={style["sub-title-item"]}>{difficulty}</p>
             </div>
           </div>
         </div>
