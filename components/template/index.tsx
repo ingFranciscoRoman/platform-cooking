@@ -8,16 +8,6 @@ import NavCardList from "@/components/molecules/NavCardList";
 import { dataNavCardList } from "@/lib/data-nav";
 
 function App() {
-  // const { status, data, error, isFetching } = useQuery({
-  //   queryKey: ["/recipes/random?number=4"],
-  // });
-
-  // if (isFetching) {
-  //   return <div>Loading...</div>;
-  // }
-
-  // console.log({ data });
-
   return (
     <div className={styles.hello}>
       <Banner />
