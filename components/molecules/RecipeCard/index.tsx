@@ -1,10 +1,8 @@
 "use client";
 
 import Image from "next/image";
-// import style from "@/components/molecules/RecipeCard/RecipeCard.module.scss";
 import style from "@/components/molecules/RecipeCard/RecipeCard.module.scss";
 import { useSplitTitle } from "@/components/molecules/RecipeCard/hooks/useSplitTitle";
-import BackInformationCard from "@/components/atoms/BackInformationCard";
 
 interface RecipeCardProps {
   title: string;
