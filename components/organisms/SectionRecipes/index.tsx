@@ -82,14 +82,10 @@ function SectionRecipes() {
   // if (isFetching) return <div>Cargando recetas...</div>;
 
   return (
-    <>
-      <div className={style.title}>
-        <h3 className="primari-m-title">Nuevas Recetas</h3>
-      </div>
-      <section className={style.newRecipes}>
-        <div className={style["container-recipe"]}>{dataRecipes}</div>
-      </section>
-    </>
+    <section className={style.sectionRecipes}>
+      <h3 className="primari-m-title">Nuevas Recetas</h3>
+      <div className={style["container-recipe"]}>{dataRecipes}</div>
+    </section>
   );
 }
 

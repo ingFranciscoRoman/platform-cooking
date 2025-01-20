@@ -16,7 +16,7 @@ function NavCardList({ dataNav }: NavbarProps) {
       {dataNav.map((item) => (
         <div key={item.name} className={style["nav-card"]}>
           <Image src={item.img} alt={item.name} width={25} height={25} />
-          <p className="font-back-card-text-recipe">{item.name}</p>
+          <p className="font-back-card-text-recipety">{item.name}</p>
         </div>
       ))}
     </div>

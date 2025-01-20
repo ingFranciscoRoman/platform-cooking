@@ -1,53 +1,72 @@
-.title {
-  padding-left: 5rem;
-  h3 {
-    font-size: 67px;
-    color: var(--red-color);
-    margin: 0;
-  }
+// .title {
+//   padding-left: 5rem;
+//   h3 {
+//     font-size: 67px;
+//     color: var(--red-color);
+//     margin: 0;
+//   }
 
-  @media (max-width: 768px) {
-    h3 {
-      font-size: 54px;
-    }
-  }
+//   @media (max-width: 768px) {
+//     h3 {
+//       font-size: 54px;
+//     }
+//   }
 
-  @media (max-width: 1280px) {
-    margin-top: 1rem;
-  }
-}
+//   @media (max-width: 1280px) {
+//     margin-top: 1rem;
+//   }
+// }
 
-.newRecipes {
+// .newRecipes {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+
+//   .container-recipe {
+//     // width: 80rem;
+//     display: flex;
+//     gap: 1.5rem;
+//     margin-top: 2.5rem;
+//     height: 27rem;
+//   }
+
+//   @media (max-width: 1280px) {
+//     .container-recipe {
+//       margin-top: 2.5rem;
+//       height: 27rem;
+//     }
+//   }
+
+//   @media (max-width: 768px) {
+//     .container-recipe {
+//       width: 38rem;
+//       max-height: 50svh;
+//       display: flex;
+//       gap: 18rem;
+//       overflow-x: auto;
+//     }
+
+//     .container-recipe::-webkit-scrollbar {
+//       width: 0;
+//     }
+//   }
+// }
+
+.sectionRecipes {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  h3 {
+    margin: 0;
+    border: 1px solid blue;
+  }
 
   .container-recipe {
-    // width: 80rem;
+    position: relative;
+    border: 1px solid red;
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 1.5rem;
-    margin-top: 2.5rem;
-    height: 27rem;
-  }
-
-  @media (max-width: 1280px) {
-    .container-recipe {
-      margin-top: 2.5rem;
-      height: 27rem;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .container-recipe {
-      width: 38rem;
-      max-height: 50svh;
-      display: flex;
-      gap: 18rem;
-      overflow-x: auto;
-    }
-
-    .container-recipe::-webkit-scrollbar {
-      width: 0;
-    }
+    height: 32rem;
   }
 }
