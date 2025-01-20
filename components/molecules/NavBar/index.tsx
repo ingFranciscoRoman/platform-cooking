@@ -1,5 +1,5 @@
 import NavItem from "@/components/atoms/NavItem";
-import style from "@/components/molecules/NavBar/NavBar.module.scss";
+import style from "./Navbar.module.scss";
 
 interface NavData {
   name: string;
