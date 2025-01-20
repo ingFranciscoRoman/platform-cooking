@@ -1,6 +1,6 @@
+import { useMemo } from "react";
 import { Recipe, RecipesResponse } from "@/types/recipes.types";
 import { useQuery } from "@tanstack/react-query";
-import { useMemo } from "react";
 
 export function useFetchRecipes() {
   const { data, error, isFetching } = useQuery<RecipesResponse>({

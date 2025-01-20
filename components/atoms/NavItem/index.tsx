@@ -6,7 +6,11 @@ interface NavItemProps {
 }
 
 function NavItem({ label, href }: NavItemProps) {
-  return <Link href={href}>{label}</Link>;
+  return (
+    <Link className="nav-item-font" href={href}>
+      {label}
+    </Link>
+  );
 }
 
 export default NavItem;

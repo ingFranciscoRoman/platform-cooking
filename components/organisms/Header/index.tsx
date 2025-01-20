@@ -1,7 +1,7 @@
 import { memo } from "react";
-import style from "./Header.module.scss";
-import Navbar from "@/components/molecules/NavBar";
 import Image from "next/image";
+import style from "@/components/organisms/Header/Header.module.scss";
+import Navbar from "@/components/molecules/NavBar";
 import { dataNav } from "@/lib/data-nav";
 
 function Header() {

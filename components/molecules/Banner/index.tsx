@@ -1,6 +1,6 @@
 // import { monsterClubhouse, poppins } from "@/lib/fonts";
 import { memo } from "react";
-import style from "./Banner.module.scss";
+import style from "@/components/molecules/Banner/Banner.module.scss";
 
 function Banner() {
   return (
