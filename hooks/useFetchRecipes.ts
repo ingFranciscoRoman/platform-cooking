@@ -2,19 +2,6 @@ import { Recipe, RecipesResponse } from "@/types/recipes.types";
 import { useQuery } from "@tanstack/react-query";
 import { useMemo } from "react";
 
-// interface Recipe {
-//   id: number;
-//   title: string;
-//   servings: number;
-//   readyInMinutes: number;
-//   aggregateLikes: number;
-//   image: string;
-// }
-
-// interface RecipesResponse {
-//   recipes: Recipe[];
-// }
-
 export function useFetchRecipes() {
   const { data, error, isFetching } = useQuery<RecipesResponse>({
     queryKey: ["/recipes/random?number=4"],

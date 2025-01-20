@@ -2,11 +2,13 @@
   width: 266px;
   margin-top: -12rem;
   .container-img {
-    border-radius: 50%;
     display: flex;
     justify-content: center;
     img {
       width: 160px;
+    }
+    img {
+      border-radius: 50%;
     }
   }
 
