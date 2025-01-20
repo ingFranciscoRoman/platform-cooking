@@ -1,5 +1,5 @@
-import style from "@/components/molecules/NavCardList/NavCardList.module.scss";
 import Image from "next/image";
+import style from "@/components/molecules/NavCardList/NavCardList.module.scss";
 
 interface NavData {
   name: string;
