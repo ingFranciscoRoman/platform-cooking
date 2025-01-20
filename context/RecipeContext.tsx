@@ -1,26 +1,28 @@
 "use client";
 
-import { useQuery } from "@tanstack/react-query";
+import { useFetchRecipes } from "@/hooks/useFetchRecipes";
+import { RecipeContextType } from "@/types/recipes.types";
+// import { useQuery } from "@tanstack/react-query";
 import { createContext, useContext, useMemo } from "react";
 
-type Recipe = {
-  id: number;
-  title: string;
-  servings: number;
-  readyInMinutes: number;
-  aggregateLikes: number;
-  image: string;
-};
+// type Recipe = {
+//   id: number;
+//   title: string;
+//   servings: number;
+//   readyInMinutes: number;
+//   aggregateLikes: number;
+//   image: string;
+// };
 
-type RecipesResponse = {
-  recipes: Recipe[];
-};
+// type RecipesResponse = {
+//   recipes: Recipe[];
+// };
 
-type RecipeContextType = {
-  data: Recipe[] | undefined;
-  isFetching: boolean;
-  error: unknown;
-};
+// type RecipeContextType = {
+//   data: Recipe[] | undefined;
+//   isFetching: boolean;
+//   error: unknown;
+// };
 
 const RecipeContext = createContext<RecipeContextType | null>(null);
 
@@ -29,22 +31,24 @@ export function RecipeProvider({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const { data, error, isFetching } = useQuery<RecipesResponse>({
-    queryKey: ["/recipes/random?number=4"],
-  });
+  const { recipes, isFetching, error } = useFetchRecipes();
 
-  const recipes = useMemo(() => {
-    return (
-      data?.recipes?.map((recipe) => ({
-        id: recipe.id,
-        title: recipe.title,
-        servings: recipe.servings,
-        readyInMinutes: recipe.readyInMinutes,
-        aggregateLikes: recipe.aggregateLikes,
-        image: recipe.image,
-      })) || []
-    );
-  }, [data]);
+  // const { data, error, isFetching } = useQuery<RecipesResponse>({
+  //   queryKey: ["/recipes/random?number=4"],
+  // });
+
+  // const recipes = useMemo(() => {
+  //   return (
+  //     data?.recipes?.map((recipe) => ({
+  //       id: recipe.id,
+  //       title: recipe.title,
+  //       servings: recipe.servings,
+  //       readyInMinutes: recipe.readyInMinutes,
+  //       aggregateLikes: recipe.aggregateLikes,
+  //       image: recipe.image,
+  //     })) || []
+  //   );
+  // }, [data]);
 
   return (
     <RecipeContext.Provider value={{ data: recipes, isFetching, error }}>
