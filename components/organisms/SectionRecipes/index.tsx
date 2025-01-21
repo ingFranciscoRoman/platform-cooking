@@ -83,7 +83,9 @@ function SectionRecipes() {
 
   return (
     <section className={style.sectionRecipes}>
-      <h3 className={`primari-m-title title-section`}>Nuevas Recetas</h3>
+      <h3 className={`primari-m-title ${style["title-section"]}`}>
+        Nuevas Recetas
+      </h3>
       <div className={style["container-recipe"]}>{dataRecipes}</div>
     </section>
   );

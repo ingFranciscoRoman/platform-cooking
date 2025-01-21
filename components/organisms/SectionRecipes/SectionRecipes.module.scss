@@ -10,7 +10,6 @@
   }
 
   .container-recipe {
-    border: 1px solid red; // Para depuración
     width: 100%; // El contenedor ocupa todo el ancho de su padre
     height: 450px; // Ajusta la altura automáticamente según el contenido
     margin: 0 auto;
@@ -37,7 +36,6 @@
       font-size: 50px;
     }
     .container-recipe {
-      border: 1px solid green; // Para depuración
       width: 90%; // Mantiene el ancho del contenedor en móviles
       height: 450px;
       display: flex;
@@ -59,9 +57,9 @@
   }
 
   @media (max-width: 428px) {
-    margin-top: 5rem;
+    margin-top: 8rem;
     .title-section {
-      font-size: 20px;
+      font-size: 50px;
     }
   }
 }

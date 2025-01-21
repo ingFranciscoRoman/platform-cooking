@@ -120,4 +120,35 @@
       z-index: 2;
     }
   }
+
+  @media (max-width: 428px) {
+    width: 180px;
+    height: 182px;
+    margin-top: -4rem;
+    .card {
+      &.front {
+        .card-front {
+          height: 4.5rem;
+        }
+        .card-front-content {
+          .card-front-content-title {
+            h3 {
+              font-size: 1rem;
+            }
+          }
+          .card-front-content-icons {
+            margin-top: 2rem;
+            .card-front-content-icons-item {
+              gap: 0.3rem;
+            }
+          }
+        }
+      }
+      &.back {
+        .card-back {
+          height: 4.5rem;
+        }
+      }
+    }
+  }
 }
