@@ -2,6 +2,7 @@ import React, { useMemo } from "react";
 import style from "@/components/organisms/SectionRecipes/SectionRecipes.module.scss";
 import RecipeCard from "@/components/molecules/RecipeCard";
 import { useRecipes } from "@/context/RecipeContext";
+import Loading from "@/components/atoms/Loading";
 
 const getDifficulty = (readyInMinutes: number) => {
   if (readyInMinutes < 20) return "fácil";
@@ -28,7 +29,9 @@ function SectionRecipes() {
     [recipes]
   );
 
-  if (isFetching) return <div>Cargando recetas...</div>;
+  if (isFetching) {
+    return <Loading />;
+  }
 
   return (
     <section className={style.sectionRecipes}>
