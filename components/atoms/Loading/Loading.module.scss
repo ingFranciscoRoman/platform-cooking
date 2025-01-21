@@ -1,0 +1,26 @@
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  p {
+    text-align: center;
+  }
+
+  @media (max-width: 767px) {
+    height: 300px;
+    p {
+      text-align: center;
+      font-size: 30px;
+    }
+  }
+
+  @media (max-width: 428px) {
+    margin-top: 7rem;
+    height: 200px;
+    p {
+      text-align: center;
+      font-size: 20px;
+    }
+  }
+}
