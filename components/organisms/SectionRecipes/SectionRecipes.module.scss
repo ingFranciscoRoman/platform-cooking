@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
+
   h3 {
     margin: 0;
     margin-top: 1rem;
@@ -9,70 +10,56 @@
   }
 
   .container-recipe {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
-    height: 32rem;
-  }
+    width: 100%; // El contenedor ocupa todo el ancho de su padre
+    height: 450px; // Ajusta la altura automáticamente según el contenido
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    display: flex; // Flexbox para diseño horizontal
+    justify-content: center; // Alinea las tarjetas al inicio
+    gap: 1rem; // Espacio horizontal entre tarjetas
+    box-sizing: border-box;
+    overflow-x: auto; // Habilita desplazamiento horizontal
+    white-space: nowrap; // Fuerza las tarjetas a estar en una sola fila
+    padding-bottom: 1rem; // Espacio adicional debajo del contenedor
 
-  @media (max-width: 1280px) {
-    h3 {
-      margin-top: 1rem;
-      padding-left: 5rem;
+    .hover-card {
+      flex: 0 0 auto; // Impide que las tarjetas se reduzcan de tamaño
+      width: 266px;
+      height: 270px;
+      margin-right: 1rem; // Espacio explícito entre tarjetas
+      border: 1px solid blue; // Para depuración
     }
   }
 
-  @media (max-width: 768px) {
-    position: absolute;
-    top: 24rem;
-    width: 100%;
-    h3 {
-      font-size: 54px;
-      margin-bottom: 1rem;
-      padding-left: 4rem;
+  @media (max-width: 767px) {
+    .title-sectio {
+      font-size: 50px;
     }
     .container-recipe {
-      width: 40rem;
-      max-height: 45svh;
+      width: 90%; // Mantiene el ancho del contenedor en móviles
+      height: 450px;
       display: flex;
-      padding-top: 7.5rem;
-      padding-left: 32rem;
-      box-sizing: border-box;
-      gap: 1.4rem;
-      overflow-x: auto;
-      margin: 0 auto;
+      justify-content: start; // Las tarjetas se alinean al inicio
+      gap: 1rem;
+      //white-space: nowrap; // Evita saltos de línea en las tarjetas
+      overflow-x: auto; // Habilita el desplazamiento horizontal
+
+      &::-webkit-scrollbar {
+        display: none; // Oculta la barra de desplazamiento en navegadores basados en WebKit
+      }
     }
 
-    .container-recipe::-webkit-scrollbar {
-      width: 0;
+    .hover-card {
+      flex: 0 0 auto; // Impide que las tarjetas cambien de tamaño
+      width: 266px;
+      height: 270px;
     }
   }
 
   @media (max-width: 428px) {
-    position: absolute;
-    top: 31rem;
-    width: 100%;
-    h3 {
-      font-size: 54px;
-      margin-bottom: 1rem;
-      padding-left: 4rem;
-    }
-    .container-recipe {
-      width: 5rem;
-      max-height: 32svh;
-      display: flex;
-      padding-top: 8rem;
-      padding-left: 26rem;
-      box-sizing: border-box;
-      gap: 1.4rem;
-      overflow-x: auto;
-      margin: 0 auto;
-    }
-
-    .container-recipe::-webkit-scrollbar {
-      width: 0;
+    margin-top: 8rem;
+    .title-section {
+      font-size: 50px;
     }
   }
 }

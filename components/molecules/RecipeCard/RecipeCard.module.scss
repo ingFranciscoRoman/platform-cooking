@@ -1,179 +1,152 @@
-.cardContainer {
+.container-image {
+  display: flex;
+  justify-content: center;
+  img {
+    width: 160px;
+    height: 150px;
+    z-index: 5;
+    border-radius: 50%;
+  }
+}
+
+.hover-card {
+  position: relative;
   width: 266px;
-  margin-top: -12rem;
-  .container-img {
-    display: flex;
-    justify-content: center;
-    img {
-      width: 160px;
-    }
-    img {
-      border-radius: 50%;
-    }
+  height: 270px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: height 0.3s ease-in-out;
+  margin-top: -6rem;
+  box-shadow: 4px 6px 10px #bfc4cad1;
+
+  &:hover {
+    height: 360px;
   }
 
-  .card-front {
-    background: var(--gradient-card-color);
-    height: 270px;
-    margin-top: -6rem;
+  .card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 1.2rem;
+    color: black;
+    transition: opacity 0.3s ease-in-out, z-index 0.3s ease;
     border-radius: 16px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    box-shadow: 4px 6px 10px #bfc4cad1;
-    transition: all 0.3s ease;
 
-    .content-title {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 0.5rem;
-      margin-top: 6rem;
-      p {
-        margin: 0;
+    &.front {
+      background: var(--gradient-card-color);
+      z-index: 2;
+      opacity: 1;
+      transition: opacity 0.3s ease-in-out;
+
+      .card-front {
+        height: 6.5rem;
       }
-    }
 
-    .content-information-recipe {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 15px;
-      margin-top: 2rem;
-      .information-data-recipe {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        height: 2rem;
-        p {
-          font-family: poppins;
-          color: var(--blue-dark-color);
+      .card-front-content {
+        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        opacity: 1;
+        visibility: visible; // Visible por defecto
+        .card-front-content-title {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 0.5rem;
+          h3 {
+            margin: 0;
+            padding: 0;
+          }
+        }
+        .card-front-content-icons {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 20px;
+          margin-top: 4rem;
+          .card-front-content-icons-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+          }
         }
       }
-      div,
-      img {
-        width: 23px;
-        height: 23px;
+    }
+
+    &.back {
+      background: var(--gradient-card-color) !important;
+      z-index: 1;
+      opacity: 0;
+
+      .card-back {
+        //border: 1px solid red;
+        height: 6.5rem;
+      }
+
+      .card-back-content {
+        .card-back-content-item {
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          margin-bottom: 1rem;
+          img {
+            margin: auto;
+          }
+          .font-back-card-text {
+            text-align: center;
+            p {
+              margin: 0;
+            }
+          }
+        }
       }
     }
-  }
-
-  .hidden-card {
-    display: none;
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
   }
 
   &:hover {
-    .card-front {
-      display: none;
-    }
+    .card.front {
+      opacity: 0; // Oculta toda la tarjeta frontal
+      z-index: 1;
 
-    .container-img {
-      margin-top: -10.3rem;
-      img {
-        z-index: 5;
+      .card-front-content {
+        opacity: 0; // Oculta el contenido de la tarjeta frontal
+        visibility: hidden; // Asegura que no sea accesible
       }
     }
 
-    .hidden-card {
-      display: flex;
-      width: 266px;
-      height: 386px;
-      position: absolute;
-      top: 3.5rem;
-      border-radius: 16px;
-      background: var(--gradient-card-color);
-      box-shadow: 4px 6px 10px #bfc4cad1;
+    .card.back {
       opacity: 1;
-      transform: translateY(0);
-
-      .card-back {
-        width: 266px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-        margin-top: 3rem;
-        content-porcion,
-        img {
-          width: 17px;
-          height: 17px;
-        }
-        div {
-          width: 266px;
-          text-align: center;
-          p {
-            margin: 0;
-          }
-          .title-item {
-            font-family: "Monster Clubhouse";
-            font-size: 17px;
-            color: var(--red-color);
-          }
-          .sub-title-item {
-            font-family: "Poppins";
-            font-size: 15px;
-            color: var(--blue-dark-color);
-          }
-        }
-      }
-    }
-  }
-
-  @media (max-width: 768px) {
-    .card-front {
-      width: 266px;
-      height: 270px;
+      z-index: 2;
     }
   }
 
   @media (max-width: 428px) {
-    .container-img {
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      img {
-        width: 111px;
-        height: 107px;
-        border-radius: 50%;
-      }
-    }
-
-    .card-front {
-      width: 180px;
-      height: 182px;
-      margin-top: -4rem;
-
-      .content-title {
-        p {
-          margin: 0;
-          font-size: 20px;
+    width: 180px;
+    height: 182px;
+    margin-top: -4rem;
+    .card {
+      &.front {
+        .card-front {
+          height: 4.5rem;
         }
-      }
-
-      .content-information-recipe {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 15px;
-        margin-top: 0.6rem;
-        .information-data-recipe {
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-          height: 2rem;
-          p {
-            font-family: poppins;
-            color: var(--blue-dark-color);
-            font-size: 17px;
+        .card-front-content {
+          .card-front-content-title {
+            h3 {
+              font-size: 1rem;
+            }
+          }
+          .card-front-content-icons {
+            margin-top: 2rem;
+            .card-front-content-icons-item {
+              gap: 0.3rem;
+            }
           }
         }
-        div,
-        img {
-          width: 16px;
-          height: 16px;
+      }
+      &.back {
+        .card-back {
+          height: 4.5rem;
         }
       }
     }

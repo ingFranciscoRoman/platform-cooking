@@ -1,7 +1,6 @@
-"use client";
-
-import Image from "next/image";
+import React, { useState } from "react";
 import style from "@/components/molecules/RecipeCard/RecipeCard.module.scss";
+import Image from "next/image";
 import { useSplitTitle } from "@/components/molecules/RecipeCard/hooks/useSplitTitle";
 
 interface RecipeCardProps {
@@ -13,92 +12,105 @@ interface RecipeCardProps {
   image: string;
 }
 
-function RecipeCard({
+const HoverCard = ({
   title,
   servings,
   readyInMinutes,
   difficulty,
   aggregateLikes,
   image,
-}: RecipeCardProps) {
+}: RecipeCardProps) => {
+  const [isHovered, setIsHovered] = useState(false);
   const { firstTitle, secondTitle } = useSplitTitle(title);
 
   return (
-    <div className={style.cardContainer}>
-      <div className={style["container-img"]}>
-        <Image src={image} alt={title} width={160} height={157} />
+    <div>
+      <div className={style["container-image"]}>
+        <Image src={image} alt="plato" width={160} height={170} />
       </div>
-      <div className={style["container-card-front"]}>
-        <div className={style["card-front"]}>
-          <div className={style["content-title"]}>
-            <p className="font-card-title">{firstTitle}</p>
-            <p className="font-card-title-recipe">{secondTitle}</p>
-          </div>
-          <div className={style["content-information-recipe"]}>
-            <div className={style["information-data-recipe"]}>
-              <Image
-                src="/img/ic_star.svg"
-                alt="icon-portion"
-                width={20}
-                height={20}
-              />
-              <p className="font-card-title">{aggregateLikes}</p>
+      <div
+        className={style["hover-card"]}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        {/* Front Card */}
+        <div className={`${style.card} ${style.front}`}>
+          <div className={style["card-front"]}></div>
+          <div className={`${style["card-front-content"]}`}>
+            <div className={style["card-front-content-title"]}>
+              <h3 className="font-card-title">{firstTitle}</h3>
+              <h3 className="font-card-title-recipe">{secondTitle}</h3>
             </div>
-            <div>
-              <Image
-                src="/img/ic_heart.svg"
-                alt="icon-portion"
-                width={20}
-                height={20}
-              />
+            <div className={style["card-front-content-icons"]}>
+              <div className={style["card-front-content-icons-item"]}>
+                <Image
+                  src="/img/ic_star.svg"
+                  alt="heart"
+                  width={23}
+                  height={23}
+                />
+                <p>{aggregateLikes}</p>
+              </div>
+              <div>
+                <Image
+                  src="/img/ic_heart.svg"
+                  alt="heart"
+                  width={19}
+                  height={17}
+                />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className={style["hidden-card"]}>
-        <div className={style["card-back"]}>
-          <div className={style["content-porcion"]}>
-            <Image
-              src="/img/porcion.svg"
-              width={17}
-              height={17}
-              alt="porcion"
-            />
-            <div>
-              <p className={style["title-item"]}>Tamaño de la porción</p>
-              <p className={style["sub-title-item"]}>{servings} raciones</p>
+
+        {/* Back Card */}
+        <div
+          className={`${style.card} ${style.back} ${
+            isHovered ? style.visible : ""
+          }`}
+        >
+          <div className={style["card-back"]}></div>
+          <div className={style["card-back-content"]}>
+            <div className={style["card-back-content-item"]}>
+              <Image
+                src="/img/porcion.svg"
+                alt="porcion"
+                width={17}
+                height={17}
+              />
+              <div className={style["font-back-card-text"]}>
+                <p className="font-back-card-text">Tamaño de la porción</p>
+                <p className="font-back-card-text-recipe">
+                  {servings} raciones
+                </p>
+              </div>
             </div>
-          </div>
-          <div className={style["content-time-preparation"]}>
-            <Image
-              src="/img/timepre.svg"
-              width={17}
-              height={17}
-              alt="tiempo de preparación"
-            />
-            <div>
-              <p className={style["title-item"]}>Tiempo de preparación</p>
-              <p className={style["sub-title-item"]}>
-                {readyInMinutes} minutos
-              </p>
+            <div className={style["card-back-content-item"]}>
+              <Image src="/img/timepre.svg" alt="time" width={17} height={17} />
+              <div className={style["font-back-card-text"]}>
+                <p className="font-back-card-text">Tiempo de preparación</p>
+                <p className="font-back-card-text-recipe">
+                  {readyInMinutes} minutos
+                </p>
+              </div>
             </div>
-          </div>
-          <div className={style["content-difficulty"]}>
-            <Image
-              src="/img/diff.svg"
-              width={17}
-              height={17}
-              alt="dificultad del plato"
-            />
-            <div>
-              <p className={style["title-item"]}>Dificultad</p>
-              <p className={style["sub-title-item"]}>{difficulty}</p>
+            <div className={style["card-back-content-item"]}>
+              <Image
+                src="/img/diff.svg"
+                alt="difficult"
+                width={17}
+                height={17}
+              />
+              <div className={style["font-back-card-text"]}>
+                <p className="font-back-card-text">Dificultad</p>
+                <p className="font-back-card-text-recipe">{difficulty}</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
-export default RecipeCard;
+export default HoverCard;
