@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import style from "@/components/organisms/SectionRecipes/SectionRecipes.module.scss";
 import RecipeCard from "@/components/molecules/RecipeCard";
-// import { useRecipes } from "@/context/RecipeContext";
+import { useRecipes } from "@/context/RecipeContext";
 
 const getDifficulty = (readyInMinutes: number) => {
   if (readyInMinutes < 20) return "fácil";
@@ -61,7 +61,7 @@ export const recipes = [
 ];
 
 function SectionRecipes() {
-  // const { data: recipes, isFetching } = useRecipes();
+  //const { data: recipes, isFetching } = useRecipes();
 
   const dataRecipes = useMemo(
     () =>
@@ -79,7 +79,7 @@ function SectionRecipes() {
     [recipes]
   );
 
-  // if (isFetching) return <div>Cargando recetas...</div>;
+  //if (isFetching) return <div>Cargando recetas...</div>;
 
   return (
     <section className={style.sectionRecipes}>

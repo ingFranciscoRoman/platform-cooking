@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import style from "@/components/molecules/RecipeCard/HoverCard.module.scss";
+import style from "@/components/molecules/RecipeCard/RecipeCard.module.scss";
 import Image from "next/image";
 import { useSplitTitle } from "@/components/molecules/RecipeCard/hooks/useSplitTitle";
 
