@@ -1,97 +1,105 @@
-.recipe-card-container {
-  display: flex;
-  flex-direction: column;
+.cardContainer {
+  width: 266px;
+  margin-top: -12rem;
+  position: relative;
 
-  .container-image {
-    position: relative;
+  .container-img {
+    border-radius: 50%;
     display: flex;
     justify-content: center;
-    margin-top: 4rem;
     img {
-      position: absolute;
       width: 160px;
-      margin-top: -4rem;
-      z-index: 5;
+      transition: all 0.3s ease; // Transición suave para la imagen
     }
   }
 
-  .hover-card {
-    position: relative;
-    width: 266px;
+  .card-front {
+    background: var(--gradient-card-color);
     height: 270px;
-    overflow: hidden;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: height 0.3s ease-in-out;
-    flex-shrink: 0;
+    margin-top: -6rem;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    box-shadow: 4px 6px 10px #bfc4cad1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease; // Transición para opacidad y visibilidad
+    opacity: 1;
+    visibility: visible;
 
-    &:hover {
-      height: 360px;
-    }
-
-    .card {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+    .content-title {
       display: flex;
-      align-items: center;
       justify-content: center;
-      font-size: 1.2rem;
-      color: white;
-      transition: opacity 0.3s ease-in-out;
-
-      &.front {
-        background-color: #6aa3c1;
-        z-index: 2;
-        opacity: 1;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 6rem;
+      p {
+        margin: 0;
       }
+    }
 
-      &.back {
-        background-color: #425966;
-        z-index: 1;
-        opacity: 0;
-      }
-
-      &:hover {
-        &.front {
-          background-color: #6aa3c1;
-          z-index: 1;
-          opacity: 0;
-        }
-
-        &.back {
-          background-color: #425966;
-          z-index: 2;
-          opacity: 1;
+    .content-information-recipe {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 15px;
+      margin-top: 2rem;
+      .information-data-recipe {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        height: 2rem;
+        p {
+          font-family: poppins;
+          color: var(--blue-dark-color);
         }
       }
+      div,
+      img {
+        width: 23px;
+        height: 23px;
+      }
+    }
+  }
+
+  .hidden-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 266px;
+    height: 386px;
+    border-radius: 16px;
+    background: var(--gradient-card-color);
+    box-shadow: 4px 6px 10px #bfc4cad1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; // Oculta inicialmente
+    visibility: hidden; // Oculta del flujo visual
+    transition: opacity 0.3s ease, visibility 0.3s ease; // Transición para opacidad y visibilidad
+  }
+
+  &:hover {
+    .card-front {
+      opacity: 0; // Hace que desaparezca suavemente
+      visibility: hidden; // Asegura que no interfiera visualmente
     }
 
-    .hidden {
-      opacity: 0;
+    .hidden-card {
+      opacity: 1; // Hace que aparezca suavemente
+      visibility: visible; // Se hace visible
     }
 
-    .visible {
-      opacity: 1;
-      z-index: 3;
+    .container-img {
+      margin-top: -10.3rem;
+      img {
+        z-index: 5;
+      }
     }
-
-    // $small: 576px;
-    // $medium: 768px;
-    // $large: 1024px;
-    // .card {
-    //   font-size: 18px;
-    //   @media (max-width: $medium) {
-    //     .card {
-    //       width: 266px;
-    //     }
-    //   }
-    //   @media (max-width: $small) {
-    //     font-size: 14px;
-    //   }
-    // }
   }
 }
