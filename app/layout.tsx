@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body style={{ margin: 0, padding: 0 }}>
         <Header />
         <QueryClientProvider client={queryClient}>

@@ -1,12 +1,23 @@
+.container-image {
+  display: flex;
+  justify-content: center;
+  img {
+    width: 160px;
+    height: 150px;
+    z-index: 5;
+    border-radius: 50%;
+  }
+}
+
 .hover-card {
   position: relative;
   width: 266px;
   height: 270px;
-  // overflow: hidden;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 16px;
   cursor: pointer;
   transition: height 0.3s ease-in-out;
+  margin-top: -6rem;
+  box-shadow: 4px 6px 10px #bfc4cad1;
 
   &:hover {
     height: 360px;
@@ -18,98 +29,95 @@
     left: 0;
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     font-size: 1.2rem;
-    color: white;
-    transition: opacity 0.3s ease-in-out;
+    color: black;
+    transition: opacity 0.3s ease-in-out, z-index 0.3s ease;
+    border-radius: 16px;
 
     &.front {
-      background-color: #6aa3c1;
+      background: var(--gradient-card-color);
       z-index: 2;
       opacity: 1;
+      transition: opacity 0.3s ease-in-out;
+
+      .card-front {
+        height: 6.5rem;
+      }
+
+      .card-front-content {
+        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        opacity: 1;
+        visibility: visible; // Visible por defecto
+        .card-front-content-title {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 0.5rem;
+          h3 {
+            margin: 0;
+            padding: 0;
+          }
+        }
+        .card-front-content-icons {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 20px;
+          margin-top: 4rem;
+          .card-front-content-icons-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+          }
+        }
+      }
     }
 
     &.back {
-      background-color: #425966;
+      background: var(--gradient-card-color) !important;
       z-index: 1;
       opacity: 0;
-    }
 
-    &:hover {
-      &.front {
-        background-color: #6aa3c1;
-        z-index: 1;
-        opacity: 0;
+      .card-back {
+        //border: 1px solid red;
+        height: 6.5rem;
       }
 
-      &.back {
-        background-color: #425966;
-        z-index: 2;
-        opacity: 1;
-      }
-    }
-  }
-
-  .hidden {
-    opacity: 0;
-  }
-
-  .visible {
-    opacity: 1;
-    z-index: 3;
-  }
-
-  @media (max-width: 767px) {
-    flex: 0 0 auto;
-    //position: relative;
-    width: 266px;
-    height: 270px;
-    // overflow: hidden;
-    //border: 1px solid #ccc;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: height 0.3s ease-in-out;
-
-    .card {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 266px;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-      color: white;
-      transition: opacity 0.3s ease-in-out;
-
-      &.front {
-        background-color: #6aa3c1;
-        z-index: 2;
-        opacity: 1;
-      }
-
-      &.back {
-        background-color: #425966;
-        z-index: 1;
-        opacity: 0;
-      }
-
-      &:hover {
-        &.front {
-          background-color: #6aa3c1;
-          z-index: 1;
-          opacity: 0;
-        }
-
-        &.back {
-          background-color: #425966;
-          z-index: 2;
-          opacity: 1;
+      .card-back-content {
+        .card-back-content-item {
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          margin-bottom: 1rem;
+          img {
+            margin: auto;
+          }
+          .font-back-card-text {
+            text-align: center;
+            p {
+              margin: 0;
+            }
+          }
         }
       }
+    }
+  }
+
+  &:hover {
+    .card.front {
+      opacity: 0; // Oculta toda la tarjeta frontal
+      z-index: 1;
+
+      .card-front-content {
+        opacity: 0; // Oculta el contenido de la tarjeta frontal
+        visibility: hidden; // Asegura que no sea accesible
+      }
+    }
+
+    .card.back {
+      opacity: 1;
+      z-index: 2;
     }
   }
 }

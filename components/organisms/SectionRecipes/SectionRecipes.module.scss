@@ -12,11 +12,11 @@
   .container-recipe {
     border: 1px solid red; // Para depuración
     width: 100%; // El contenedor ocupa todo el ancho de su padre
-    height: auto; // Ajusta la altura automáticamente según el contenido
+    height: 450px; // Ajusta la altura automáticamente según el contenido
     margin: 0 auto;
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
     display: flex; // Flexbox para diseño horizontal
-    justify-content: start; // Alinea las tarjetas al inicio
+    justify-content: center; // Alinea las tarjetas al inicio
     gap: 1rem; // Espacio horizontal entre tarjetas
     box-sizing: border-box;
     overflow-x: auto; // Habilita desplazamiento horizontal
@@ -33,10 +33,13 @@
   }
 
   @media (max-width: 767px) {
+    .title-sectio {
+      font-size: 50px;
+    }
     .container-recipe {
       border: 1px solid green; // Para depuración
       width: 90%; // Mantiene el ancho del contenedor en móviles
-      height: 386px;
+      height: 450px;
       display: flex;
       justify-content: start; // Las tarjetas se alinean al inicio
       gap: 1rem;
@@ -52,6 +55,13 @@
       flex: 0 0 auto; // Impide que las tarjetas cambien de tamaño
       width: 266px;
       height: 270px;
+    }
+  }
+
+  @media (max-width: 428px) {
+    margin-top: 5rem;
+    .title-section {
+      font-size: 20px;
     }
   }
 }
