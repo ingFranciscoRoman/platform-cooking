@@ -34,6 +34,7 @@
     margin-top: -2.5rem;
     z-index: 5;
     height: 5rem;
+    position: relative;
   }
 
   @media (max-width: 428px) {
@@ -45,6 +46,7 @@
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    z-index: 5;
     .nav-card {
       width: 114px;
       height: 92px;
