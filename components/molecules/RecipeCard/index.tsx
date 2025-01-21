@@ -22,7 +22,7 @@ const HoverCard = ({
 
   return (
     <div
-      className={`${style["hover-card"]} ${isHovered ? style.hover : ""}`}
+      className={style["hover-card"]}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
